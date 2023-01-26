@@ -1,0 +1,92 @@
+<%- include('partials/header') %>
+<script src="/scripts/stationDetails.js" defer></script>
+<script src="/scripts/tabs.js" defer></script>
+<script src="/scripts/submit.js" defer></script>
+<section class="home">
+    <form>
+        <select required name="start" id="start">
+            <option value="" hidden>Source</option>
+            <% stationNames.map((s)=> { %>
+            <option value="<%=s %>"><%= s %></option>
+            <% }) %>
+        </select>
+        <select required name="end" id="end">
+            <option value="" hidden>Destination</option>
+            <% stationNames.map((s)=> { %>
+            <option value="<%=s %>"><%= s %></option>
+            <% }) %>
+        </select>
+        <button id="submit" type="button" class="btn">
+            <svg
+                class="loader"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="22px"
+                height="22px"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    stroke="#0a0a0a"
+                    stroke-width="10"
+                    r="35"
+                    stroke-dasharray="164.93361431346415 56.97787143782138"
+                >
+                    <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        repeatCount="indefinite"
+                        dur="1.5384615384615383s"
+                        values="0 50 50;360 50 50"
+                        keyTimes="0;1"
+                    ></animateTransform>
+                </circle>
+            </svg>
+            Find Route
+        </button>
+    </form>
+    <div class="flex">
+    <button
+            class="tablink"
+            onclick="openPage('dfs', this)"
+            id="defaultOpen"
+        >
+            Path 1
+        </button>
+        <button class="tablink" onclick="openPage('bfs', this)">Path 2</button>
+    </div>
+    <section class="flex">
+        
+        <div id="dfs" class="tabcontent">
+            <h1 class="hid" hidden></h1>
+            <section id="dfspath"></section>
+        </div>
+        <div id="bfs" class="tabcontent">
+            <h1 class="hid" hidden></h1>
+            <section id="bfspath"></section>
+        </div>
+       
+    </section>
+    <style>
+        hr {
+            height: 100%;
+            width: 2px;
+            margin: 0 15px;
+        }
+        h1{
+            font-size: xx-large;
+        }
+        h1,
+        h4 {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+    </style>
+</section>
+<%- include('partials/footer') %>

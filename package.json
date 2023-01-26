@@ -1,0 +1,30 @@
+{
+  "name": "SMART-Metro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anikxt/SMART-Metro.git"
+  },
+  "keywords": [],
+  "author": "Aniket Kanere",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anikxt/SMART-Metro/issues"
+  },
+  "homepage": "https://github.com/anikxt/SMART-Metro#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

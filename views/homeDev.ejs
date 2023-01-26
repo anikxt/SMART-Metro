@@ -1,0 +1,104 @@
+<%- include('partials/header') %>
+<script src="/scripts/submitDev.js" defer></script>
+<section class="home">
+    <form>
+        <select required name="start" id="start">
+            <option value="" hidden>Source</option>
+            <% stationNames.map((s)=> { %>
+            <option value="<%=s %>"><%= s %></option>
+            <% }) %>
+        </select>
+        <select name="day" id="day">
+            <option value="" hidden>Day</option>
+            <option value="MONDAY">Monday</option>
+            <option value="TUESDAY">Tuesday</option>
+            <option value="WEDNESDAY">Wednesday</option>
+            <option value="THURSDAY">Thursday</option>
+            <option value="FRIDAY">Friday</option>
+            <option value="SATURDAY">Saturday</option>
+            <option value="SUNDAY">Sunday</option>
+        </select>
+        <select name="time" id="time">
+            <option value="" hidden>Time</option>
+            <option value="10">10:00 AM</option>
+            <option value="11">11:00 AM</option>
+            <option value="12">12:00 PM</option>
+            <option value="1">01:00 PM</option>
+            <option value="2">02:00 PM</option>
+            <option value="3">03:00 PM</option>
+            <option value="4">04:00 PM</option>
+            <option value="5">05:00 PM</option>
+            <option value="6">06:00 PM</option>
+            <option value="7">07:00 PM</option>
+            <option value="8">08:00 PM</option>
+        </select>
+        <select name="weather" id="weather">
+            <option value="" hidden>Weather</option>
+            <option value="Sunny">Sunny</option>
+            <option value="Cool">Cool</option>
+            <option value="Rainy">Rainy</option>
+            <option value="ThunderStorm">Thunderstorm</option>
+        </select>
+        <button id="submit" type="button" class="btn">
+            <svg
+                class="loader"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="22px"
+                height="22px"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    fill="none"
+                    stroke="#0a0a0a"
+                    stroke-width="10"
+                    r="35"
+                    stroke-dasharray="164.93361431346415 56.97787143782138"
+                >
+                    <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        repeatCount="indefinite"
+                        dur="1.5384615384615383s"
+                        values="0 50 50;360 50 50"
+                        keyTimes="0;1"
+                    ></animateTransform>
+                </circle>
+            </svg>
+            Find Crowd
+        </button>
+    </form>
+    <section class="flex">
+        <div id="crowd"></div>
+    </section>
+    <style>
+        hr {
+            height: 100%;
+            width: 2px;
+            margin: 0 15px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h1,
+        h4 {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .one {
+            border-right: 2px solid red;
+            padding-right: 30px;
+            margin-right: 30px;
+        }
+    </style>
+</section>
+<%- include('partials/footer') %>
