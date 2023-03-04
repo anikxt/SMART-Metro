@@ -2,7 +2,7 @@ const { spawn, exec } = require("child_process");
 
 exports.findPath = (start, end) => {
     return new Promise((resolve, reject) => {
-        const process = spawn("python", [
+        const process = spawn("python3", [
             "./pathFinder/findPath.py",
             start,
             end,
@@ -43,7 +43,7 @@ exports.findPath = (start, end) => {
 
 exports.getCrowd = (station, time, day, weather) => {
     return new Promise((resolve, reject) => {
-        const process = spawn("python", [
+        const process = spawn("python3", [
             "./pathFinder/getCrowd.py",
             station,
             parseInt(time),
@@ -74,7 +74,7 @@ exports.getCrowd = (station, time, day, weather) => {
 exports.findPathExp = (start, end) => {
     return new Promise((resolve, reject) => {
         exec(
-            `python ./pathFinder/findPath.py "${start}" "${end}" 10 MONDAY Sunny`,
+            `python3 ./pathFinder/findPath.py "${start}" "${end}" 10 MONDAY Sunny`,
             (err, stdout, stderr) => {
                 console.log("In Model Calling");
                 const out = [];
